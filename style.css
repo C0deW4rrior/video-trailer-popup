@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: black;
+}
+
+.main-container {
+    max-width: 550px;
+    color: white;
+    padding: 10px;
+}
+
+.main-container img {   /* This configuration is done to cover it with the video */
+    max-width: 100%;    
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.main-container h1 {
+    font-weight: 500;
+}
+
+.main-container p {
+    margin: 15px 0;
+}
+
+.btn {
+    background-color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: orange;
+}
+
+.trailer-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    width: 100%;    /* This two lines are used for the video to cover the 
+    backgroud */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.7s;
+}
+
+.active.trailer-container {
+    visibility: hidden;
+    opacity: 0; /* Defines the grade of transparency of an object between 
+    0 and 1 */
+}
+
+.trailer-container video {
+    position: relative; /* The element is positioned according to the normal
+    flow of the document, and then offset relative to itself, based on the 
+    values top, right, bottom and left */
+    max-width: 900px;
+    outline: none;  /* Used to indicate focus or active states */
+}
+
+@media (max-width: 991px) {
+    .trailer-container video {
+        max-width: 95%;
+    }
+}
+
+.close-icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    cursor: pointer;
+}
